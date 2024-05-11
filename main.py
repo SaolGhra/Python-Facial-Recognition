@@ -13,7 +13,6 @@ def main():
     # Open webcam
     cap = cv2.VideoCapture(0)
 
-    # Create an instance of HandLandmarkDetector
     hand_landmark_detector = hand_landmark_detection.HandLandmarkDetector()
 
     while True:

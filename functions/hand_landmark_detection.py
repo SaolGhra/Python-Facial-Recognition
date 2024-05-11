@@ -25,26 +25,20 @@ class HandLandmarkDetector:
         )
 
     def detect_landmarks(self, frame, draw=True):
-        # print("detect_landmarks method called")
-        # Convert the frame to RGB
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-        # Process the frame and detect hand landmarks
         results = self.hands.process(rgb_frame)
 
-        # Initialize an empty list to store detected landmarks
         landmarks_list = []
 
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
                 landmarks = []
                 for landmark in hand_landmarks.landmark:
-                    # Convert normalized landmarks to pixel coordinates
                     h, w, c = frame.shape
                     x, y = int(landmark.x * w), int(landmark.y * h)
                     landmarks.append((x, y))
                     if draw:
-                        # Draw the landmarks on the frame
                         cv2.circle(frame, (x, y), 5, (255, 0, 0), -1)
                 landmarks_list.append(landmarks)
 

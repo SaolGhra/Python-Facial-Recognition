@@ -1,0 +1,5 @@
+opencv-python
+numpy
+dlib
+cv2
+mediapipe
