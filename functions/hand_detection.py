@@ -17,7 +17,7 @@ def detect_hands(frame):
     hands = []
     for contour in contours:
         area = cv2.contourArea(contour)
-        if area > 1000:
+        if area > 800:
             x, y, w, h = cv2.boundingRect(contour)
             hands.append((x, y, x + w, y + h))
 

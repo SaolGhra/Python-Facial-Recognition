@@ -25,7 +25,7 @@ class HandLandmarkDetector:
         )
 
     def detect_landmarks(self, frame, draw=True):
-        print("detect_landmarks method called")
+        # print("detect_landmarks method called")
         # Convert the frame to RGB
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
