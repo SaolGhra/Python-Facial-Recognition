@@ -7,16 +7,14 @@ from functions import (
     hand_detection,
     hand_landmark_detection,
 )
-import importlib
-import functions.hand_landmark_detection
-
-importlib.reload(functions.hand_landmark_detection)
-from functions.hand_landmark_detection import HandLandmarkDetector
 
 
 def main():
     # Open webcam
     cap = cv2.VideoCapture(0)
+
+    # Create an instance of HandLandmarkDetector
+    hand_landmark_detector = hand_landmark_detection.HandLandmarkDetector()
 
     while True:
         # Read frame from webcam
@@ -36,10 +34,12 @@ def main():
         # Detect hands
         hands = hand_detection.detect_hands(frame)
 
+        # Plot hand landmarks on each hand
         for hand in hands:
-            hand_landmarks = hand_landmark_detection.detect_landmarks(frame, hand)
-            for x, y in hand_landmarks:
-                cv2.circle(frame, (x, y), 1, (0, 255, 0), -1)
+            frame, hand_landmarks = hand_landmark_detector.detect_landmarks(frame)
+            for landmarks in hand_landmarks:
+                for x, y in landmarks:
+                    cv2.circle(frame, (x, y), 1, (0, 0, 255), -1)
 
         # Display the frame
         cv2.imshow("Facial Landmarks and Hand Detection", frame)
