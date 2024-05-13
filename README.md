@@ -46,10 +46,6 @@ This is a Python program that utilizes facial recognition and hand recognition t
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Acknowledgements
 
 - [OpenCV](https://opencv.org/): An open-source computer vision library.
@@ -58,4 +54,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions or inquiries, please contact [your-email@example.com](mailto:your-email@example.com).
+For any questions or inquiries, please contact [contact@saolghra.co.uk](contact@saolghra.co.uk).
